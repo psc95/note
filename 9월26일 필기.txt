@@ -1,0 +1,45 @@
+1. 새로운 부트프로젝트 project생성하고 application.properties 개발환경설정함.
+2.project/pom.xml에서
+    <!--  jsp 실행 가능하게 함. -->
+       <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-jasper</artifactId>
+        <scope>provided</scope>
+       </dependency>
+       
+       <!-- JSTL 가능하게 함. -->
+       <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+       </dependency>
+       
+       <!-- cos 이진파일:바이너리 모드파일(binary mode file)
+       (파일첨부->자료실) 업로드 라이브러리 추가 -->
+        <dependency>
+         <groupId>servlets.com</groupId>
+         <artifactId>cos</artifactId>
+         <version>05Nov2002</version>
+        </dependency>
+       
+추가함.
+
+3.src/main/resources경로에 mybatis-config.xml에 추가
+4.src/main/resources/net/daum/mappers/mybatis/bbs.xml mybatis매퍼태그 추가
+5.src/main/java/net/daum/vo 경로에 BbsVO.java 엔티티빈 클래스 생성
+     페이징과 검색기능 때문에 PageVO.java 생성
+6.mybatis-config.xml에서 
+                         <typeAlias type="net.daum.vo.BbsVO" alias="bbs" />
+      <!-- BbsVO 빈클래스 객체 별칭이름을 bbs로 지정 -->
+      <typeAlias type="net.daum.vo.PageVO" alias="page" />   
+7.net.daum.dao패키지를 만들고
+ BbsDAO.java와 BbsDAOImpl.java를 생성한다.  JPA를 실행하기 위한 BbsRepository.java인터페이스
+생성함
+
+8. net.daum.service 패키지를 만들고 BbsService.java, BbsServiceImpl.java생성
+9. net.daum.controller패키지를 만들고 BbsController.java생성
+BbsController.java에서 bbs_write,bbs_write_ok,bbs_list 매핑작업함.
+
+BbsController.java -> BbsService.java,BbsServiceImpl.java ->BbsDAO.java, BbsDAOImpl.java ->
+bbs.xml
+
+내일은 검색기능을 한다.

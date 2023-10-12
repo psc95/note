@@ -1,0 +1,17 @@
+1. MemberController.java->MemberService.java->MemberServiceImpl.java -> MemberDAO.java
+=> MemberDAOImpl.java => member.xml 로 이어지는 비번 찾기,암호화 된 임시비번 수정을 함.
+그리고 비번찾기와 암호화 된 임시비번 수정 pwdFind(), updatePwd() 각 jpa 쿼리 메서드 만듬.
+
+2. 가입 회원 mem_state=1인 경우만 로그인 인증처리 => 로그인 인증 처리 메서드인 loginCheck()를 만듬. 로그아웃도 만듬.
+
+3. 로그인 인증 처리 JPA 메서드 loginCheck(login_id)를 만듬
+
+4. 반복적인 코드를 안하기 위한 MemberController.java에 정적메서드 isLogin()을 생성
+
+5. 회원정보 수정폼 getMember(id) 메서드 작성함.
+
+6. this.memberRepo.getReferenceById(id); MemberDAOImpl.java에서 JPA로 회원정보 보기를 만듬.
+
+7. 정보수정완료 updateMember(m) 작성
+
+8.JPA로 회원정보 수정완료 void updateMember(인자값) 쿼리 메서드 작성

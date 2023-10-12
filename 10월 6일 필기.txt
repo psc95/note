@@ -1,0 +1,4 @@
+1. AdminBbsController.java => AdminBbsService.java, AdminBbsServiceImpl.java => AdminBbsDAO.java, AdminBbsDAOImpl.java, AdminBbsRepository.java => admin_bbs.xml 만들고
+관리자 자료실 저장, 관리지 자료실 상세정보,관리자 자료실 수정폼, 수정완료,삭제완료까지 함.
+
+결국 관리자 자료실 함.

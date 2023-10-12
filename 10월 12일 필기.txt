@@ -1,0 +1,24 @@
+1. MemberController.java->MemberService.java->MemberServiceImpl.java -> MemberDAO.java
+=> MemberDAOImpl.java => member.xml 로 이어지는 회원탈퇴폼과 탈퇴 완료 함.
+JPA로 회원탈퇴 구현함.
+
+2. AdminMemberController.java -> AdminMemberService.java, AdminMemberServiceImpl.java ->
+AdminMemberDAO.java, AdminMemberDAOImpl.java -> admin_member.xml로 이어지는 관리자
+회원관리 만듬. 물론 AdminMemberRepository로 각 jpa로 구현함.
+
+3. BoardController.java -> BoardServcie.java, BoardServiceImpl.java -> BoardDAO.java,BoardDAOImpl.
+java -> board.xml로 이어지는 사용자 게시판 구현
+BoardRepository로 각 JPA 구현
+
+4. AdminBoardController.java -> AdminBoardService.java, AdminBoardServiceImpl.java ->
+AdminBoardDAO.java, AdminBoardDAOImpl.java -> admin_board.xml로 이어지는 관리자 게시판 구현
+AdminBoardRepository.java로 각 jpa 구현
+
+5. AdminGongjiController.java -> AdminGongjiService.java , AdminGongjiServiceImpl.java ->
+AdminGongjiDAO.java, AdminGongjiDAOImpl.java -> admin_gongji.xml로 이어지는 관리자 공지사항
+구현
+AdminGongjiRepository.java로 각 JPA 구현
+
+6. GongjiController.java -> GongjiService.java, GongjiServiceImpl.java -> GongjiDAO.java, GongjiDAOI
+mpl.java -> gongji.xml로 이어지는 사용자 공지사항 구현
+   GongjiRepository.java로 각 JPA구현

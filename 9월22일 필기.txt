@@ -1,0 +1,41 @@
+1. boot04 프로젝트에서 net.daum.vo패키지에서 MemberVO.java, Profile.java 엔티티빈 클래스 생성
+2. net.daum.dao패키지에서 MemberRepository.java, ProfileRepository.java 파일 생성
+3.src/test/net/daum에서 ProfileTests.java 파일 만듬.
+    가. 20명 회원 자료 저장
+    나. 특정 회원 user1에 프로필 사진 4개 추가
+    다. user1 아이디 정보와 프로필사진 개수
+    라. user1 회원정보와 현재 사용중인 프로필 사진정보
+
+4. boot05_oracle_mybatis_JPA 프로젝트 생성=> 부트와 MYBATIS와 JPA,오라클 연동
+   가. application.properties 설정작업함.
+   나. pom.xml에
+       <!--  jsp 실행 가능하게 함. -->
+       <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-jasper</artifactId>
+        <scope>provided</scope>
+       </dependency>
+       
+       <!-- JSTL 가능하게 함. -->
+       <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+       </dependency>
+
+  추가
+    다. src/main/webapp/WEB-INF/views 뷰페이지 폴더 경로 생성
+    라. src/main/resources/mybatis-config.xml 
+    마. src/main/resources/net/daum/mappers/mybatis/*.xml 매퍼태그 설정
+    바. net.daum.vo패키지에서 UserAddrVO.java 엔티티빈 클래스 정의
+        net.daum.controller패키지에 AddrController.java 스프링 컨트롤러 클래스 생성
+        /WEB-INF/views/mybatis-jpa.jsp뷰페이지 만듬.
+    사.net.daum.dao패키지에 UserAddrDAO.java, UserAddrDAOImpl.java생성
+    아. UserAddrController.java에서 이름과 주소를 저장하는 insertUserAddr(useraddr)을 만듬
+  
+스프링 MVC 흐름도는 UserAddrController.java->UserAddrService.java ->
+       UserAddrServiceImpl.java ->UserAddrDAO.java->UserAddrDAOImpl.java->useraddr
+       .xml
+   
+추가적으로 net.daum.dao패키지에서 JPA를 활용하기 위한 UserAddrRepository.java생성
+UserAddrDAOImpl.java에서 JPA를 실행하기 위한 userAddrRepo의존성 주입하고 save()메서드로
+이름과주소 저장

@@ -1,0 +1,28 @@
+1. bbs_list.jsp와 BbsController.java,BbsService.java,BbsServiceImpl.java,BbsDAO.java,BbsDAOImpl.
+java,bbs.xml에서 검색기능을 만듬.
+
+2.bbs_list.jsp에서 제목을 클릭하면 매핑주소인 bbs_cont가 실행이 되어져서
+내용보기인 bbs_cont.jsp, 답변폼일때는 bbs_reply.jsp, 수정폼일때는 bbs_edit.jsp, 삭제폼일때는
+bbs_del.jsp가 각각 해당 뷰페이지로 보여지게 했음.
+
+3.BbsServiceImpl.java의 getBbsCont()메서드에 트랜잭션 적용
+  조회수증가 updateHit()와 내용보기인 getBbsCont()를 만듬
+  BbsDAOImpl.java에서 JPA로 조회수증가와 내용보기 만듬.
+
+4.bbs_reply.jsp 답변 폼 작성. bbs_write.jsp 파일내용을 그대로 복사해서 붙여넣기 한다음 
+답변글에 관한 부분으로 수정함. 파일 첨부부분 삭제함.
+
+5. BbsController.java => BbsService.java,BbsServiceImpl.java => BbsDAO.java,BbsDAOImpl.java
+=>bbs.xml에서 답변 레벨 증가와 답변 저장을 만듬.
+
+6.BbsDAOImpl.java에서 JPA로 답변 레벨 증가와 답변 저장 만듬.
+
+7. bbs_edit.jsp 자료실 수정폼 만듬.
+
+8. bbs_edit_ok매핑주소로 실행되는 자료실 수정완료를 mybatis 만듬.
+   BbsDAOImpl.java에서 JPA로 자료실 수정완료 만듬.
+
+9.bbs_del.jsp자료실 삭제폼 만듬.
+
+10.bbs_del_ok매핑주소로 실행되는 자료실 삭제완료를 mybatis로 만듬.
+ BbsDAOImpl.java에서 JPA로 자료실 삭제만듬.

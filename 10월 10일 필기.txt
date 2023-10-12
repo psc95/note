@@ -1,0 +1,24 @@
+1. MemberVO.java 엔티티빈 클래스를 통해서 member테이블 생성, ZipcodeVO.java 빈클래스를 통해서 zipcode테이블 생성, 우편주소 검색값을 한번더
+가공하기 위한 ZipCodeVO2.java생성
+
+2.mybatis-config.xml에서 MemberVO와 ZipcodeVO빈클래스 객체 별칭이름 등록
+
+3. net.daum.dao패키지에 MemberDAO.java,MemberDAOImpl.java 생성하고 MemberRepository.java jpa 인터페이스 생성
+ZipCodeRepository.java생성
+
+4. net.daum.service패키지에 MemberService인터페이스와 이를 구현한 MemberServiceImpl.java생성
+
+5. net.daum.controller패키지에 MemberController.java 스프링 컨트롤러 클래스생성하고 member_login 로그인 폼 매핑주소 등록하고 해당 로그인 뷰페이지로 이동하게 함.
+
+6. MemberController.java에서 회원가입 폼 member_join매핑주소 등록하고 해당 회원가입 폼 뷰페이지 member_Join.jsp 공유
+
+7.member_idcheck 매핑주소로 실행되는 비동기식 아이디 중복검색을 함.
+
+8.MemberController.java를 통해서 우편번호 검색 공지창 zip_find를 만듬.
+
+9. 우편주소검색결과 zip_find_ok를 만듬. 
+10.MemberDAOImpl.java에서 우편검색 JPA 쿼리메서드 findByDong()을 만듬.
+ 
+11. MemberController.java => MemberService.java, MemberServiceImpl.java => MemberDAO.java
+,MemberDAOImpl.java => member.xml mybatis로 회원저장과 동시에 MemberDAOImpl.java로
+JPA로 회원저장 

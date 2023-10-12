@@ -1,0 +1,22 @@
+1. AdminController.java => AdminService.java, AdminServiceImpl.java => AdminDAO.java,
+AdminDAOImpl.java, AdminRepository.java => admin.xml 만듬.
+관리자 저장,관리자 로그인 인증,로그인 이후 관리자 메인페이지,관리자 로그아웃 만듬.
+
+뷰페이지로는 admin_Login.jsp는 관리자 로그인 페이지,관리자 로그인 인증후 관리자 메인페이지는
+admin_main.jsp이다.
+
+2. AdminBbsController.java => AdminBbsService.java, AdminBbsServiceImpl.java => AdminBbs
+DAO.java, AdminBbsDAOImpl.java , AdminBbsRepository.java-> admin_bbs.xml 
+관리자 자료실 순환 관계만듬.
+
+3.AdminBbsController.java에서 admin_bbs_list 관리자 자료실 목록 만듬.
+  관리자 자료실 목록페이지 admin_bbs_list.jsp
+
+4.반복적인 관리자 로그인을 안하기 위한 코드 추가
+public static boolean isAdminLogin(인자 생략){}
+
+5.AdminBbsController.java에서 admin_bbs_write 관리자 자료실 글쓰기 매핑주소 추가
+
+6.관리자 상단 공통 헤더와 하단부분 include폴더하위에 admin_header.jsp와 admin_footer.jsp추가
+
+7. admin_header.jsp에서 jQuery라이브러리를 CDN방식으로 변경
